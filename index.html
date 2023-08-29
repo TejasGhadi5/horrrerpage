@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Website</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #020912;
+        overflow-x: hidden;
+    }
+    nav{
+        position: absolute;
+        width: 100%;
+        padding: 50px;
+        padding-top: 20px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: antiquewhite;
+    }
+    .link,ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+    }
+    .logo{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 48px;
+        padding: 20px;
+        border-radius: 14px;
+        background-color: rgba(67, 4, 4, 0.588);
+        cursor: pointer;
+    }
+    li{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        padding: 15px;
+        border-radius: 15px;
+        list-style: none;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+    }
+    li:hover, .active{
+        background-color: antiquewhite;
+        color: black;
+    }
+    .container{
+        min-height: 100%;
+        max-width: 100%;
+        display: grid;
+        justify-items: center;
+    }
+    #wel{
+        position: absolute;
+        top: 250px;
+        font-family: serif;
+        font-size: 64px;
+        color: rgba(76, 7, 7, 0.71);
+    }
+    .container .item{
+        position: absolute;
+        top: 0;
+    }
+    #one{
+        left: -10px;
+    }
+    #two{
+        right: -10px;
+    }
+    #three{
+        left: -400px;
+    }
+    #four{
+        right: -400px;
+    }
+    #five{
+        top: 0px;
+    }
+    .text{
+        position: absolute;
+        top: 121vh;
+        padding: 100px;
+        color: white;
+        background-color: #020912;
+        font-size: 26px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        font-weight: 400;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .admin{
+        position: absolute;
+        padding: 50px 0px;
+        color: aqua;
+        font-size: 64px;
+        left: 50%;
+
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">Profile</div>
+        <div class="link"><ul>
+            <li class="active">Help</li>
+            <li>About</li>
+            <li>Contat</li>
+            <li>More</li>
+        </ul></div>
+    </nav>
+    <div class="container"><img src="static/background.png" alt="">
+        <h1 id="wel">Welcome</h1>
+        <div id="one" class="item"><img src="static/tree-left.png" alt=""></div>
+        <div id="two" class="item"><img src="static/tree-right.png" alt=""></div>
+        <div id="three" class="item"><img src="static/gate-left.png" alt=""></div>
+        <div id="four" class="item"><img src="static/gate-right.png" alt=""></div>
+        <div id="five" class="item"><img src="static/grass.png" alt=""></div>
+    </div>
+    <div id="txt" class="text">
+        <h1>This is a Haunted Place</h1><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur similique delectus sint itaque. Perspiciatis quasi repellendus officia tempore alias omnis eum maxime iste iusto soluta, fugit quas molestias assumenda nesciunt consequatur amet atque nisi fugiat autem tempora quo culpa, ea tenetur placeat. Nobis, numquam et?</p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur similique delectus sint itaque. Perspiciatis quasi repellendus officia tempore alias omnis eum maxime iste iusto soluta, fugit quas molestias assumenda nesciunt consequatur amet atque nisi fugiat autem tempora quo culpa, ea tenetur placeat. Nobis, numquam et?</p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur similique delectus sint itaque. Perspiciatis quasi repellendus officia tempore alias omnis eum maxime iste iusto soluta, fugit quas molestias assumenda nesciunt consequatur amet atque nisi fugiat autem tempora quo culpa, ea tenetur placeat. Nobis, numquam et?</p>
+        <div class="admin">Your Advisor Friend</div>
+    </div>
+
+    <script>
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        let three = document.getElementById('three');
+        let four = document.getElementById('four');
+        let five = document.getElementById('five');
+        let wel = document.getElementById('wel');
+        let txt = document.getElementById('txt');
+
+        window.addEventListener('scroll',()=>{
+            let scroll = scrollY;
+
+            wel.style.marginTop= scroll * +.3 + 'px';
+            one.style.left= scroll * -.5 + 'px';
+            two.style.right= scroll * -.5 + 'px';
+            three.style.left= -400-scroll * -.5 + 'px';
+            four.style.right= -400-scroll * -.5 + 'px';
+            five.style.marginTop= scroll * -.3 + 'px';
+            txt.style.marginTop= scroll * -.3 + 'px';
+
+        })
+    </script>
+</body>
+</html>
